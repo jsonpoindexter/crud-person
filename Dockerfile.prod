@@ -1,0 +1,17 @@
+# TS BUILDER CONFIG
+FROM alpine as builder
+RUN apk add --update nodejs nodejs-npm
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "tsconfig.json", ".eslintrc", ".prettierrc", "./"]
+COPY src/ src/
+RUN npm install --quite && npm run build-ts
+
+# PROD CONFIG
+FROM alpine
+RUN apk add --update nodejs nodejs-npm
+WORKDIR /app
+ENV NODE_ENV=production
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm ci --quite --only=production
+COPY --from=builder /app/dist ./dist
+CMD [ "npm", "start" ]

@@ -1,0 +1,8 @@
+# TS BUILDER CONFIG
+FROM alpine
+RUN apk add --update nodejs nodejs-npm
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "tsconfig.json", "./"]
+RUN npm install
+COPY src  src
+CMD ["npm", "run", "watch"]
