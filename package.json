@@ -26,7 +26,8 @@
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.32"
+    "typeorm": "^0.2.32",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.10",
@@ -34,6 +35,7 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.1",
     "@types/supertest": "^2.0.11",
+    "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "concurrently": "^6.0.2",

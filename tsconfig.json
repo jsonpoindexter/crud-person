@@ -4,6 +4,8 @@
     "lib": ["ESNext"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true, // required by typeorm
+    "experimentalDecorators": true, // required by typeorm
     "target": "es6",
     "noImplicitAny": true,
     "moduleResolution": "node",
