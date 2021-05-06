@@ -1,9 +1,9 @@
 import api from './services/api'
 import 'reflect-metadata'
 import { createConnection } from 'typeorm'
+import logger from './util/logger'
 
 // Main
-import logger from './util/logger'
 ;(async () => {
   try {
     const postgres = await createConnection()
